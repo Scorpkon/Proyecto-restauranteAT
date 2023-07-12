@@ -1,0 +1,13 @@
+#divCard{
+width: 14rem;
+display: inline-block;
+
+}
+
+#divHeader{
+    margin-top: 58px;
+}
+
+#title{
+    color: rgb(220, 20, 60);
+}
