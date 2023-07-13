@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { MealList } from './MealList';
+import { useFetch } from './CustomHookfetch';
 import "./Styles.css"
 
 export const Home = () => {//Privado
@@ -10,12 +11,13 @@ export const Home = () => {//Privado
     const k = process.env.REACT_APP_KEY;
 
 
-
+    const [data]= useFetch(`${uri}apiKey=${k}&timeFrame=day&targetCalories=${cal}`)/*Añadida */
+    
 
     function getMeals() {
 
 
-        fetch(`${uri}apiKey=${k}&timeFrame=day&targetCalories=${cal}`)
+    /*    fetch(`${uri}apiKey=${k}&timeFrame=day&targetCalories=${cal}`)
             .then((response) => response.json()) //Usamos el api json
             .then((data) => {
                 setMealData(data);
@@ -23,7 +25,8 @@ export const Home = () => {//Privado
             })
             .catch(() => {
                 console.log("error")
-            })
+            })*/
+            setMealData(data);/*Añadido */
     }
 
     function handleChange(e) {
