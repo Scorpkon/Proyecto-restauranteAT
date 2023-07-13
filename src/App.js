@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+
+
 import { Auth, Landing } from './components/Auth';
 import { Home } from './components/Home';
 import {Routes, Route, BrowserRouter} from 'react-router-dom';
