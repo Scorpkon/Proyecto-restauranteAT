@@ -7,15 +7,16 @@ export function Meal({ meal }) {
     const k = process.env.REACT_APP_KEY;
     const [data]= useFetch(`https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=${k}&includeNutrition=false`)/*Añadida */
 
-
+const [id, setId]= useState();
 
     useEffect(() => {
         setImageUrl(data.image);
+        setId(meal.id)
         
 
         
 
-    }, [meal.id]);
+    }, [id]);
 
     return (
        
